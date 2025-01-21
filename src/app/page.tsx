@@ -1,190 +1,219 @@
 import { ThemeToggle } from "@/components/ThemeToggle";
 
-export const dynamic = 'force-dynamic';
+export const dynamic = "force-static";
 
 export default function Home() {
   return (
-    <div className="relative grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)] bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
-      <ThemeToggle />
-      <main className="flex flex-col gap-8 row-start-2 items-center text-center max-w-4xl">
-        <div className="animate-fade-in">
-          <h1 className="text-5xl sm:text-7xl font-bold bg-gradient-to-r from-purple-400 via-blue-400 to-purple-400 dark:from-purple-400 dark:via-blue-400 dark:to-purple-400 light:from-purple-600 light:via-blue-500 light:to-purple-600 bg-clip-text text-transparent animate-gradient-x pb-4 flex items-center justify-center gap-4">
-            <svg 
-              className="w-12 h-12 sm:w-16 sm:h-16" 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              stroke="currentColor" 
-              strokeWidth="2" 
-              strokeLinecap="round" 
-              strokeLinejoin="round"
-            >
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-              <polyline points="22,6 12,13 2,6" />
-              <line x1="12" y1="13" x2="12" y2="21" />
-              <line x1="8" y1="17" x2="16" y2="17" />
-            </svg>
-            ProxyHub
-          </h1>
-          <p className="text-xl sm:text-3xl text-gray-600 dark:text-gray-300 mt-4">
-            Your Ultimate API Testing & Tunneling Companion
-          </p>
-          <div className="flex gap-2 justify-center mt-4">
-            <span className="px-3 py-1 text-sm bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300 rounded-full">Open Source</span>
-            <span className="px-3 py-1 text-sm bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 rounded-full">Free Forever</span>
-          </div>
-        </div>
+    <div className="relative flex min-h-screen flex-col bg-white p-4 dark:bg-gray-900 text-gray-900 dark:text-white sm:p-6 md:p-8">
+      {/* Header */}
+      <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between bg-white/80 px-4 py-3 backdrop-blur-sm dark:bg-gray-900/80 sm:px-6 md:px-8">
+        <img
+          src="/proxyhub_light.png"
+          alt="ProxyHub"
+          className="h-6 w-auto dark:block hidden sm:h-8"
+        />
+        <img
+          src="/proxyhub_dark.png"
+          alt="ProxyHub"
+          className="h-6 w-auto dark:hidden dark:block sm:h-8"
+        />
+        <ThemeToggle />
+      </header>
 
-        <div className="w-full transform hover:scale-[1.02] transition-all duration-300">
-          <a 
+      {/* Main Content */}
+      <main className="mx-auto flex w-full max-w-5xl flex-1 flex-col gap-6 pt-10 pb-16 md:gap-8 md:pt-12">
+        {/* Hero Section */}
+        <section className="text-center">
+          <div className="animate-fade-in space-y-4">
+            <h1 className="flex items-center justify-center gap-4 bg-gradient-to-r from-orange-400 via-amber-400 to-orange-400 bg-clip-text pb-2 text-4xl font-bold text-transparent animate-gradient-x dark:from-orange-400 dark:via-amber-400 dark:to-orange-400 sm:text-6xl md:text-7xl">
+              <svg
+                className="h-10 w-10 sm:h-14 sm:w-14 md:h-16 md:w-16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+                <line x1="12" y1="13" x2="12" y2="21" />
+                <line x1="8" y1="17" x2="16" y2="17" />
+              </svg>
+            </h1>
+            <p className="text-lg text-gray-600 dark:text-gray-300 sm:text-xl md:text-2xl">
+              Your Ultimate API Testing & Tunneling Companion
+            </p>
+            <div className="flex flex-wrap justify-center gap-2">
+              <span className="rounded-full bg-orange-100 px-3 py-1 text-sm text-orange-700 dark:bg-orange-900/50 dark:text-orange-300">
+                Open Source
+              </span>
+              <span className="rounded-full bg-amber-100 px-3 py-1 text-sm text-amber-700 dark:bg-amber-900/50 dark:text-amber-300">
+                Free Forever
+              </span>
+            </div>
+          </div>
+        </section>
+
+        {/* API Testing Tool Link */}
+        <section className="w-full">
+          <a
             href="/api"
-            className="group flex items-center justify-between gap-4 px-6 py-4 bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-purple-500/10 hover:from-purple-500/20 hover:via-blue-500/20 hover:to-purple-500/20 dark:from-purple-500/20 dark:via-blue-500/20 dark:to-purple-500/20 dark:hover:from-purple-500/30 dark:hover:via-blue-500/30 dark:hover:to-purple-500/30 rounded-2xl border border-purple-200/50 dark:border-purple-700/50 hover:border-purple-300 dark:hover:border-purple-600 transition-all shadow-lg hover:shadow-xl"
+            className="group flex items-center justify-between gap-4 rounded-xl border border-orange-200/50 bg-gradient-to-r from-orange-500/10 via-amber-500/10 to-orange-500/10 p-4 shadow-lg transition-all hover:scale-[1.01] hover:border-orange-300 hover:from-orange-500/20 hover:via-amber-500/20 hover:to-orange-500/20 hover:shadow-xl dark:border-orange-700/50 dark:from-orange-500/20 dark:via-amber-500/20 dark:to-orange-500/20 dark:hover:border-orange-600 dark:hover:from-orange-500/30 dark:hover:via-amber-500/30 dark:hover:to-orange-500/30 sm:p-6"
           >
             <div className="flex items-center gap-4">
-              <div className="p-2 bg-white dark:bg-gray-800 rounded-xl">
+              <div className="rounded-lg bg-white p-2 dark:bg-gray-800">
                 <span className="text-2xl">🔧</span>
               </div>
               <div className="text-left">
-                <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+                <h3 className="text-lg font-semibold text-gray-800 transition-colors group-hover:text-orange-600 dark:text-gray-200 dark:group-hover:text-orange-400 sm:text-xl">
                   Launch API Testing Tool
                 </h3>
-                <p className="text-gray-600 dark:text-gray-400">
+                <p className="text-sm text-gray-600 dark:text-gray-400 sm:text-base">
                   Test, debug, and analyze your APIs in real-time
                 </p>
               </div>
             </div>
-            <svg 
-              className="w-6 h-6 text-gray-400 group-hover:text-purple-500 dark:group-hover:text-purple-400 transform group-hover:translate-x-1 transition-all" 
-              fill="none" 
-              stroke="currentColor" 
+            <svg
+              className="h-6 w-6 text-gray-400 transition-all group-hover:translate-x-1 group-hover:text-orange-500 dark:group-hover:text-orange-400"
+              fill="none"
+              stroke="currentColor"
               viewBox="0 0 24 24"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
             </svg>
           </a>
-        </div>
+        </section>
 
-        <div className="space-y-8 mt-12 w-full">
-          <div className="transform hover:scale-105 transition-transform duration-300">
-            <div className="flex flex-col gap-4 p-8 rounded-2xl bg-white dark:bg-gray-800/50 shadow-lg border border-gray-200 dark:border-gray-700">
-              <h2 className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 dark:from-purple-400 dark:to-blue-400 bg-clip-text text-transparent">
-                🚀 Intercept. Test. Proxy. Repeat.
-              </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-300">
-                Debug your APIs like a pro with our open-source tunneling solution. 
-                No more "works on my machine" drama! Experience seamless API testing 
-                with real-time request interception.
-              </p>
-            </div>
+        {/* Feature Cards */}
+        <section className="grid gap-6 md:gap-8">
+          <div className="overflow-hidden rounded-xl border border-gray-200 bg-white p-6 shadow-lg transition-transform hover:scale-[1.02] dark:border-gray-700 dark:bg-gray-800/50 sm:p-8">
+            <h2 className="bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-2xl font-bold text-transparent dark:from-orange-400 dark:to-amber-400 sm:text-3xl">
+              🚀 Intercept. Test. Proxy. Repeat.
+            </h2>
+            <p className="mt-4 text-gray-600 dark:text-gray-300">
+              Debug your APIs like a pro with our open-source tunneling solution. No more "works on my machine" drama! Experience seamless API testing with real-time request interception.
+            </p>
           </div>
 
-          <div className="transform hover:scale-105 transition-transform duration-300">
-            <div className="flex flex-col gap-4 p-8 rounded-2xl bg-white dark:bg-gray-800/50 shadow-lg border border-gray-200 dark:border-gray-700">
-              <h2 className="text-3xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 dark:from-green-400 dark:to-emerald-400 bg-clip-text text-transparent">
-                💰 Pricing (Hold onto Your Wallet!)
-              </h2>
-              <div className="text-left space-y-4">
-                <div className="flex items-baseline gap-2">
-                  <p className="text-4xl font-bold text-green-600 dark:text-green-400">$0.00</p>
-                  <p className="text-xl text-gray-500 dark:text-gray-400">Forever*</p>
-                </div>
-                <p className="text-sm text-gray-500 dark:text-gray-400 italic">* No, this is not a typo. We're serious!</p>
-                <ul className="list-none space-y-3 text-gray-600 dark:text-gray-300">
-                  <li className="flex items-center gap-2">
-                    <span className="text-green-600 dark:text-green-400">✓</span>
-                    <span>Because who doesn't love free stuff?</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-green-600 dark:text-green-400">✓</span>
-                    <span>No credit card required (we won't even ask!)</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-green-600 dark:text-green-400">✓</span>
-                    <span>No hidden fees (we promise, pinky swear!)</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-green-600 dark:text-green-400">✓</span>
-                    <span>No "premium" features held hostage</span>
-                  </li>
-                </ul>
-                
-                <div className="border-t border-gray-200 dark:border-gray-700 pt-4 mt-6">
-                  <p className="text-lg font-semibold text-purple-600 dark:text-purple-400 mb-2">🎁 Want to Support Us?</p>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm">
-                    While we're committed to keeping ProxyHub free, we won't stop you from buying us a coffee! 
-                    (We've been told it's weird to refuse money 😅)
+          <div className="overflow-hidden rounded-xl border border-gray-200 bg-white p-6 shadow-lg transition-transform hover:scale-[1.02] dark:border-gray-700 dark:bg-gray-800/50 sm:p-8">
+            <h2 className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-2xl font-bold text-transparent dark:from-green-400 dark:to-emerald-400 sm:text-3xl">
+              💰 Pricing (Hold onto Your Wallet!)
+            </h2>
+            <div className="mt-4 space-y-4">
+              <div className="flex items-baseline gap-2">
+                <p className="text-3xl font-bold text-green-600 dark:text-green-400 sm:text-4xl">$0.00</p>
+                <p className="text-lg text-gray-500 dark:text-gray-400 sm:text-xl">Forever*</p>
+              </div>
+              <p className="text-sm italic text-gray-500 dark:text-gray-400">* No, this is not a typo. We're serious!</p>
+              <ul className="space-y-2 text-gray-600 dark:text-gray-300">
+                <li className="flex items-center gap-2">
+                  <span className="text-green-600 dark:text-green-400">✓</span>
+                  <span>Because who doesn't love free stuff?</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-green-600 dark:text-green-400">✓</span>
+                  <span>No credit card required (we won't even ask!)</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-green-600 dark:text-green-400">✓</span>
+                  <span>No hidden fees (we promise, pinky swear!)</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-green-600 dark:text-green-400">✓</span>
+                  <span>No "premium" features held hostage</span>
+                </li>
+              </ul>
+
+              <div className="border-t border-gray-200 pt-4 dark:border-gray-700">
+                <p className="text-lg font-semibold text-orange-600 dark:text-orange-400">🎁 Want to Support Us?</p>
+                <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
+                  While we're committed to keeping ProxyHub free, we won't stop you from buying us a coffee! (We've been told it's weird to refuse money 😅)
+                </p>
+                <p className="mt-1 text-sm italic text-gray-500 dark:text-gray-400">
+                  **Plot twist: Cloud providers don't accept high-fives as payment (we tried) 🤦‍♂️
+                </p>
+                <div className="mt-3 space-y-2">
+                  <p className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+                    <span className="text-yellow-500">⭐</span>
+                    Star us on GitHub (it's free and makes us happy!)
                   </p>
-                  <p className="text-gray-500 dark:text-gray-400 text-sm italic">
-                    **Plot twist: Cloud providers don't accept high-fives as payment (we tried) 🤦‍♂️
+                  <a
+                    href="https://buymeacoffee.com/abhisawzm"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-sm text-gray-500 transition-colors hover:text-green-500 dark:text-gray-400 dark:hover:text-green-400"
+                  >
+                    <span className="text-green-500">☕</span>
+                    Buy us a coffee (if you really insist!)
+                  </a>
+                  <p className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+                    <span className="text-red-500">❤️</span>
+                    Tell your friends (we love good gossip!)
                   </p>
-                  <div className="mt-3 space-y-2">
-                    <p className="text-gray-500 dark:text-gray-400 text-sm flex items-center gap-2">
-                      <span className="text-yellow-500">⭐</span>
-                      Star us on GitHub (it's free and makes us happy!)
-                    </p>
-                    <a 
-                      href="https://buymeacoffee.com/abhisawzm"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-gray-500 dark:text-gray-400 text-sm flex items-center gap-2 hover:text-green-500 dark:hover:text-green-400 transition-colors"
-                    >
-                      <span className="text-green-500">☕</span>
-                      Buy us a coffee (if you really insist!)
-                    </a>
-                    <p className="text-gray-500 dark:text-gray-400 text-sm flex items-center gap-2">
-                      <span className="text-red-500">❤️</span>
-                      Tell your friends (we love good gossip!)
-                    </p>
-                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
-        <div className="flex gap-6 items-center flex-col sm:flex-row mt-12">
+        {/* CTA Buttons */}
+        <section className="flex flex-col gap-4 sm:flex-row sm:justify-center">
           <a
-            className="rounded-full border-2 border-solid border-transparent transition-all flex items-center justify-center bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white gap-2 text-base sm:text-lg h-14 px-8 shadow-lg hover:shadow-xl"
+            className="flex h-12 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 px-6 text-white shadow-lg transition-all hover:from-orange-600 hover:to-amber-600 hover:shadow-xl"
             href="https://github.com/cube-root/proxyhub"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-              <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
+            <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                fillRule="evenodd"
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                clipRule="evenodd"
+              />
             </svg>
             Star on GitHub
           </a>
           <a
-            className="rounded-full border-2 border-solid border-purple-500 dark:border-purple-400 transition-all flex items-center justify-center hover:bg-purple-50 dark:hover:bg-purple-900/20 text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 text-base sm:text-lg h-14 px-8"
+            className="flex h-12 items-center justify-center rounded-full border-2 border-orange-500 px-6 text-orange-600 transition-all hover:bg-orange-50 dark:border-orange-400 dark:text-orange-400 dark:hover:bg-orange-900/20"
             href="https://github.com/cube-root/proxyhub#readme"
             target="_blank"
             rel="noopener noreferrer"
           >
             Read Documentation
           </a>
-        </div>
+        </section>
       </main>
 
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center text-sm text-gray-500 dark:text-gray-400">
-        <p className="flex items-center gap-2">
-          Built with <span className="text-red-500 animate-pulse">❤️</span> for developers
-        </p>
-        <a
-          className="hover:text-purple-500 dark:hover:text-purple-400 transition-colors"
-          href="https://github.com/cube-root/proxyhub"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          GitHub
-        </a>
-        <span className="text-gray-400 dark:text-gray-500">•</span>
-        <a
-          className="hover:text-purple-500 dark:hover:text-purple-400 transition-colors text-sm"
-          href="https://github.com/abhisawesome"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          @abhisawesome
-        </a>
+      {/* Footer */}
+      <footer className="mt-auto border-t border-gray-200 py-4 text-center text-sm text-gray-500 dark:border-gray-800 dark:text-gray-400">
+        <div className="flex flex-wrap items-center justify-center gap-4">
+          <p className="flex items-center gap-2">
+            Built with <span className="animate-pulse text-red-500">❤️</span> for developers
+          </p>
+          <a
+            className="transition-colors hover:text-orange-500 dark:hover:text-orange-400"
+            href="https://github.com/cube-root/proxyhub"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+          <span className="text-gray-400 dark:text-gray-500">•</span>
+          <a
+            className="transition-colors hover:text-orange-500 dark:hover:text-orange-400"
+            href="https://github.com/abhisawesome"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            @abhisawesome
+          </a>
+        </div>
       </footer>
     </div>
   );

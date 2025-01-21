@@ -218,15 +218,8 @@ export default function ApiTester() {
 
   return (
     <div className="min-h-screen bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text">
-      <div className="container mx-auto p-4 max-w-[1600px]">
-        <div className="flex flex-col gap-6">
-          {/* Header */}
-          <header className="flex items-center justify-between mb-4">
-            <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
-              API Tester
-            </h1>
-          </header>
-
+      <div className="container mx-auto p-2 sm:p-4 max-w-[1600px]">
+        <div className="flex flex-col gap-4 sm:gap-6">
           {/* Tabs */}
           <Tabs
             tabs={tabs}
@@ -260,11 +253,11 @@ export default function ApiTester() {
           />
 
           {/* Main Content */}
-          <div className="grid grid-cols-[1fr,auto] gap-4">
-            <div className="grid grid-cols-2 gap-4">
+          <div className="flex flex-col lg:grid lg:grid-cols-[1fr,auto] gap-4">
+            <div className="flex flex-col md:grid md:grid-cols-2 gap-4">
               {/* Request Panel */}
-              <div className="bg-light-surface dark:bg-dark-surface rounded-lg p-4 border border-light-border dark:border-dark-border">
-                <h2 className="text-lg font-semibold mb-4">Request</h2>
+              <div className="bg-light-surface dark:bg-dark-surface rounded-lg p-3 sm:p-4 border border-light-border dark:border-dark-border">
+                <h2 className="text-lg font-semibold mb-3 sm:mb-4">Request</h2>
 
                 <QueryParams
                   request={activeTab.request}
@@ -278,8 +271,8 @@ export default function ApiTester() {
               </div>
 
               {/* Response Panel */}
-              <div className="bg-light-surface dark:bg-dark-surface rounded-lg p-4 border border-light-border dark:border-dark-border">
-                <h2 className="text-lg font-semibold mb-4">Response</h2>
+              <div className="bg-light-surface dark:bg-dark-surface rounded-lg p-3 sm:p-4 border border-light-border dark:border-dark-border">
+                <h2 className="text-lg font-semibold mb-3 sm:mb-4">Response</h2>
                 <Response
                   response={activeTab.response}
                   request={activeTab.request}
@@ -288,7 +281,7 @@ export default function ApiTester() {
             </div>
 
             {/* History Panel */}
-            <div className="w-80 bg-light-surface dark:bg-dark-surface rounded-lg border border-light-border dark:border-dark-border">
+            <div className="w-full lg:w-80 bg-light-surface dark:bg-dark-surface rounded-lg border border-light-border dark:border-dark-border">
               <History
                 history={history}
                 onSelect={handleSelectFromHistory}
