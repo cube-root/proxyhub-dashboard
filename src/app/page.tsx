@@ -1,6 +1,7 @@
+'use client'
 import { ThemeToggle } from "@/components/ThemeToggle";
 
-export const dynamic = "force-static";
+// export const dynamic = "force-static";
 
 export default function Home() {
   return (
