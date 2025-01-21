@@ -9,6 +9,7 @@ import { RequestBody } from "./components/RequestBody";
 import { Response } from "./components/Response";
 import { Tabs } from "./components/Tabs";
 import { History } from "./components/History";
+import { Headers } from "./components/Headers";
 
 const createNewTab = (): TabData => ({
   id: generateId(),
@@ -20,16 +21,19 @@ const createNewTab = (): TabData => ({
     url: "",
     queryParams: [],
     headers: [
-      { key: "Accept", value: "application/json" },
-      { key: "Authorization", value: "" },
-      { key: "Access-Control-Allow-Origin", value: "*" },
+      { key: "Content-Type", value: "application/json", enabled: true },
+      { key: "Accept", value: "application/json", enabled: true },
+      { key: "Authorization", value: "", enabled: true },
+      { key: "Access-Control-Allow-Origin", value: "*", enabled: true },
       {
         key: "Access-Control-Allow-Methods",
         value: "GET, POST, PUT, DELETE, PATCH, OPTIONS",
+        enabled: true,
       },
       {
         key: "Access-Control-Allow-Headers",
         value: "Content-Type, Authorization",
+        enabled: true,
       },
     ],
     body: "",
@@ -117,13 +121,11 @@ export default function ApiTester() {
     const startTime = performance.now();
     try {
       setLoading(true);
-      const headers: Record<string, string> = {
-        "Content-Type": activeTab.request.contentType,
-      };
+      const headers: Record<string, string> = {};
 
-      // Add user-defined headers for all request types
+      // Add all enabled headers
       activeTab.request.headers.forEach((h) => {
-        if (h.key && h.value) headers[h.key] = h.value;
+        if (h.key && h.value && h.enabled) headers[h.key] = h.value;
       });
 
       const url = buildUrl(
@@ -260,6 +262,11 @@ export default function ApiTester() {
                 <h2 className="text-lg font-semibold mb-3 sm:mb-4">Request</h2>
 
                 <QueryParams
+                  request={activeTab.request}
+                  onRequestChange={handleRequestChange}
+                />
+
+                <Headers
                   request={activeTab.request}
                   onRequestChange={handleRequestChange}
                 />

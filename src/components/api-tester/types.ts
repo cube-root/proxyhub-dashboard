@@ -5,6 +5,10 @@ export interface QueryParam {
   value: string;
 }
 
+export interface Header extends QueryParam {
+  enabled: boolean;
+}
+
 export interface FormDataItem {
   key: string;
   value: string;
@@ -18,7 +22,7 @@ export interface RequestData {
   method: string;
   url: string;
   queryParams: QueryParam[];
-  headers: QueryParam[];
+  headers: Header[];
   body: string;
   contentType: string;
   formData?: FormDataItem[];
