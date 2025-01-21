@@ -215,12 +215,12 @@ export default function ApiTester() {
           {/* Header */}
           <header className="flex items-center justify-between">
             <h1 className="text-2xl font-bold">Proxyhub</h1>
-            <button
+            {/* <button
               className="p-2 hover:bg-light-surface dark:hover:bg-dark-surface rounded"
               onClick={toggleTheme}
             >
               {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
-            </button>
+            </button> */}
           </header>
 
           {/* Tabs */}

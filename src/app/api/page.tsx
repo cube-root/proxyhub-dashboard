@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import ApiTester from "@/components/api-tester/ApiTester";
 
 export const metadata: Metadata = {
-  title: "API Testing Tool | ProxyHub",
+  title: "ProxyHub",
   description: "A beautiful and powerful API testing tool",
 };
 
