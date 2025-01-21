@@ -2,6 +2,8 @@ import Image from "next/image";
 import { Logo } from "@/components/Logo";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
+export const dynamic = 'force-dynamic';
+
 export default function Home() {
   return (
     <div className="relative grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)] bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
@@ -32,6 +34,35 @@ export default function Home() {
             <span className="px-3 py-1 text-sm bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300 rounded-full">Open Source</span>
             <span className="px-3 py-1 text-sm bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 rounded-full">Free Forever</span>
           </div>
+        </div>
+
+        <div className="w-full transform hover:scale-[1.02] transition-all duration-300">
+          <a 
+            href="/api"
+            className="group flex items-center justify-between gap-4 px-6 py-4 bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-purple-500/10 hover:from-purple-500/20 hover:via-blue-500/20 hover:to-purple-500/20 dark:from-purple-500/20 dark:via-blue-500/20 dark:to-purple-500/20 dark:hover:from-purple-500/30 dark:hover:via-blue-500/30 dark:hover:to-purple-500/30 rounded-2xl border border-purple-200/50 dark:border-purple-700/50 hover:border-purple-300 dark:hover:border-purple-600 transition-all shadow-lg hover:shadow-xl"
+          >
+            <div className="flex items-center gap-4">
+              <div className="p-2 bg-white dark:bg-gray-800 rounded-xl">
+                <span className="text-2xl">🔧</span>
+              </div>
+              <div className="text-left">
+                <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+                  Launch API Testing Tool
+                </h3>
+                <p className="text-gray-600 dark:text-gray-400">
+                  Test, debug, and analyze your APIs in real-time
+                </p>
+              </div>
+            </div>
+            <svg 
+              className="w-6 h-6 text-gray-400 group-hover:text-purple-500 dark:group-hover:text-purple-400 transform group-hover:translate-x-1 transition-all" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
         </div>
 
         <div className="space-y-8 mt-12 w-full">
@@ -77,6 +108,33 @@ export default function Home() {
                     <span>No "premium" features held hostage</span>
                   </li>
                 </ul>
+                
+                <div className="border-t border-gray-200 dark:border-gray-700 pt-4 mt-6">
+                  <p className="text-lg font-semibold text-purple-600 dark:text-purple-400 mb-2">🎁 Want to Support Us?</p>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm">
+                    While we're committed to keeping ProxyHub free, we won't stop you from buying us a coffee! 
+                    (We've been told it's weird to refuse money 😅)
+                  </p>
+                  <div className="mt-3 space-y-2">
+                    <p className="text-gray-500 dark:text-gray-400 text-sm flex items-center gap-2">
+                      <span className="text-yellow-500">⭐</span>
+                      Star us on GitHub (it's free and makes us happy!)
+                    </p>
+                    <a 
+                      href="https://buymeacoffee.com/abhisawzm"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-500 dark:text-gray-400 text-sm flex items-center gap-2 hover:text-green-500 dark:hover:text-green-400 transition-colors"
+                    >
+                      <span className="text-green-500">☕</span>
+                      Buy us a coffee (if you really insist!)
+                    </a>
+                    <p className="text-gray-500 dark:text-gray-400 text-sm flex items-center gap-2">
+                      <span className="text-red-500">❤️</span>
+                      Tell your friends (we love good gossip!)
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

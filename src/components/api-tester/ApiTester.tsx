@@ -213,15 +213,9 @@ export default function ApiTester() {
       <div className="container mx-auto p-4 max-w-[1600px]">
         <div className="flex flex-col gap-6">
           {/* Header */}
-          <header className="flex items-center justify-between">
-            <h1 className="text-2xl font-bold">Proxyhub</h1>
-            {/* <button
-              className="p-2 hover:bg-light-surface dark:hover:bg-dark-surface rounded"
-              onClick={toggleTheme}
-            >
-              {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
-            </button> */}
-          </header>
+          {/* <header className="flex items-center justify-between">
+            <h1 className="text-2xl font-bold">API Tester</h1>
+          </header> */}
 
           {/* Tabs */}
           <Tabs
