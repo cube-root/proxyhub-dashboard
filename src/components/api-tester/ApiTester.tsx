@@ -121,7 +121,7 @@ export default function ApiTester() {
         "Content-Type": activeTab.request.contentType,
       };
 
-      // Add user-defined headers
+      // Add user-defined headers for all request types
       activeTab.request.headers.forEach((h) => {
         if (h.key && h.value) headers[h.key] = h.value;
       });
@@ -133,7 +133,7 @@ export default function ApiTester() {
       const options: RequestInit = {
         method: activeTab.request.method,
         headers,
-        credentials: "include", // Include cookies in the request
+        // mode: 'cors',
       };
 
       if (activeTab.request.method !== "GET") {
