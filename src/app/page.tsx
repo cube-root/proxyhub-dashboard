@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 // export const dynamic = "force-static";
@@ -98,7 +98,9 @@ export default function Home() {
               🚀 Intercept. Test. Proxy. Repeat.
             </h2>
             <p className="mt-4 text-gray-600 dark:text-gray-300">
-              Debug your APIs like a pro with our open-source tunneling solution. No more "works on my machine" drama! Experience seamless API testing with real-time request interception.
+              Debug your APIs like a pro with our open-source tunneling
+              solution. No more "works on my machine" drama! Experience seamless
+              API testing with real-time request interception.
             </p>
           </div>
 
@@ -108,10 +110,16 @@ export default function Home() {
             </h2>
             <div className="mt-4 space-y-4">
               <div className="flex items-baseline gap-2">
-                <p className="text-3xl font-bold text-green-600 dark:text-green-400 sm:text-4xl">$0.00</p>
-                <p className="text-lg text-gray-500 dark:text-gray-400 sm:text-xl">Forever*</p>
+                <p className="text-3xl font-bold text-green-600 dark:text-green-400 sm:text-4xl">
+                  $0.00
+                </p>
+                <p className="text-lg text-gray-500 dark:text-gray-400 sm:text-xl">
+                  Forever*
+                </p>
               </div>
-              <p className="text-sm italic text-gray-500 dark:text-gray-400">* No, this is not a typo. We're serious!</p>
+              <p className="text-sm italic text-gray-500 dark:text-gray-400">
+                * No, this is not a typo. We're serious!
+              </p>
               <ul className="space-y-2 text-gray-600 dark:text-gray-300">
                 <li className="flex items-center gap-2">
                   <span className="text-green-600 dark:text-green-400">✓</span>
@@ -132,12 +140,17 @@ export default function Home() {
               </ul>
 
               <div className="border-t border-gray-200 pt-4 dark:border-gray-700">
-                <p className="text-lg font-semibold text-orange-600 dark:text-orange-400">🎁 Want to Support Us?</p>
+                <p className="text-lg font-semibold text-orange-600 dark:text-orange-400">
+                  🎁 Want to Support Us?
+                </p>
                 <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
-                  While we're committed to keeping ProxyHub free, we won't stop you from buying us a coffee! (We've been told it's weird to refuse money 😅)
+                  While we're committed to keeping ProxyHub free, we won't stop
+                  you from buying us a coffee! (We've been told it's weird to
+                  refuse money 😅)
                 </p>
                 <p className="mt-1 text-sm italic text-gray-500 dark:text-gray-400">
-                  **Plot twist: Cloud providers don't accept high-fives as payment (we tried) 🤦‍♂️
+                  **Plot twist: Cloud providers don't accept high-fives as
+                  payment (we tried) 🤦‍♂️
                 </p>
                 <div className="mt-3 space-y-2">
                   <p className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
@@ -164,9 +177,9 @@ export default function Home() {
         </section>
 
         {/* CTA Buttons */}
-        <section className="flex flex-col gap-4 sm:flex-row sm:justify-center">
+        <section className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
           <a
-            className="flex h-12 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 px-6 text-white shadow-lg transition-all hover:from-orange-600 hover:to-amber-600 hover:shadow-xl"
+            className="flex h-12 w-[200px] items-center justify-center gap-2 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 px-6 text-white shadow-lg transition-all hover:from-orange-600 hover:to-amber-600 hover:shadow-xl"
             href="https://github.com/cube-root/proxyhub"
             target="_blank"
             rel="noopener noreferrer"
@@ -180,13 +193,25 @@ export default function Home() {
             </svg>
             Star on GitHub
           </a>
-          <a
-            className="flex h-12 items-center justify-center rounded-full border-2 border-orange-500 px-6 text-orange-600 transition-all hover:bg-orange-50 dark:border-orange-400 dark:text-orange-400 dark:hover:bg-orange-900/20"
+          {/* <a
+            className="flex h-12 w-[200px] items-center justify-center rounded-full border-2 border-orange-500 px-6 text-orange-600 transition-all hover:bg-orange-50 dark:border-orange-400 dark:text-orange-400 dark:hover:bg-orange-900/20"
             href="https://github.com/cube-root/proxyhub#readme"
             target="_blank"
             rel="noopener noreferrer"
           >
             Read Documentation
+          </a> */}
+          <a
+            className="flex h-12 w-[200px] items-center justify-center rounded-full overflow-hidden"
+            href="https://www.buymeacoffee.com/abhisawzm"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="https://cdn.buymeacoffee.com/buttons/v2/default-orange.png"
+              alt="Buy Me A Coffee"
+              className="h-12 w-[200px] object-cover"
+            />
           </a>
         </section>
       </main>
@@ -195,7 +220,8 @@ export default function Home() {
       <footer className="mt-auto border-t border-gray-200 py-4 text-center text-sm text-gray-500 dark:border-gray-800 dark:text-gray-400">
         <div className="flex flex-wrap items-center justify-center gap-4">
           <p className="flex items-center gap-2">
-            Built with <span className="animate-pulse text-red-500">❤️</span> for developers
+            Built with <span className="animate-pulse text-red-500">❤️</span>{" "}
+            for developers
           </p>
           <a
             className="transition-colors hover:text-orange-500 dark:hover:text-orange-400"
