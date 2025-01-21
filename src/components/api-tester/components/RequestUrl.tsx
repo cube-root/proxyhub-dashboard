@@ -1,6 +1,6 @@
 'use client';
 
-import { Send, Save } from 'lucide-react';
+import { Send } from 'lucide-react';
 import { HTTP_METHODS } from '../utils';
 import { RequestData } from '../types';
 
@@ -8,11 +8,10 @@ interface RequestUrlProps {
   request: RequestData;
   loading: boolean;
   onRequestChange: (request: RequestData) => void;
-  onSave: () => void;
   onSend: () => void;
 }
 
-export function RequestUrl({ request, loading, onRequestChange, onSave, onSend }: RequestUrlProps) {
+export function RequestUrl({ request, loading, onRequestChange, onSend }: RequestUrlProps) {
   return (
     <div className="flex flex-col sm:flex-row gap-2 items-start sm:items-center p-2">
       <select

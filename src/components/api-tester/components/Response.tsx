@@ -2,11 +2,11 @@
 
 import { useState } from 'react';
 import { Copy, Check } from 'lucide-react';
-import { ResponseData } from '../types';
+import { ResponseData, RequestData, FormDataItem } from '../types';
 
 interface ResponseProps {
   response: ResponseData | null;
-  request: any; // Add request prop for generating curl command
+  request: RequestData;
 }
 
 export function Response({ response, request }: ResponseProps) {
@@ -20,7 +20,7 @@ export function Response({ response, request }: ResponseProps) {
     let command = `curl -X ${request.method} '${request.url}'`;
     
     // Add headers
-    request.headers.forEach((header: any) => {
+    request.headers.forEach((header) => {
       if (header.key && header.value) {
         command += `\n  -H '${header.key}: ${header.value}'`;
       }
@@ -29,7 +29,7 @@ export function Response({ response, request }: ResponseProps) {
     // Add body
     if (request.method !== 'GET' && request.body) {
       if (request.contentType === 'multipart/form-data' && request.formData) {
-        request.formData.forEach((item: any) => {
+        request.formData.forEach((item: FormDataItem) => {
           if (item.type === 'file' && item.file) {
             command += `\n  -F '${item.key}=@${item.file.name}'`;
           } else {
@@ -59,7 +59,7 @@ export function Response({ response, request }: ResponseProps) {
     }
   };
 
-  const formatResponseData = (data: any, format: 'json' | 'raw') => {
+  const formatResponseData = (data: Record<string, unknown>, format: 'json' | 'raw') => {
     if (data === null || data === undefined) {
       return '';
     }

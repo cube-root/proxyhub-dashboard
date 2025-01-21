@@ -1,5 +1,3 @@
-import Image from "next/image";
-import { Logo } from "@/components/Logo";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 export const dynamic = 'force-dynamic';
@@ -114,6 +112,9 @@ export default function Home() {
                   <p className="text-gray-600 dark:text-gray-300 text-sm">
                     While we're committed to keeping ProxyHub free, we won't stop you from buying us a coffee! 
                     (We've been told it's weird to refuse money 😅)
+                  </p>
+                  <p className="text-gray-500 dark:text-gray-400 text-sm italic">
+                    **Plot twist: Cloud providers don't accept high-fives as payment (we tried) 🤦‍♂️
                   </p>
                   <div className="mt-3 space-y-2">
                     <p className="text-gray-500 dark:text-gray-400 text-sm flex items-center gap-2">
