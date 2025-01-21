@@ -25,22 +25,22 @@ export default function Home() {
             </svg>
             ProxyHub
           </h1>
-          <p className="text-xl sm:text-3xl text-gray-300 dark:text-gray-300 light:text-gray-600 mt-4">
+          <p className="text-xl sm:text-3xl text-gray-600 dark:text-gray-300 mt-4">
             Your Ultimate API Testing & Tunneling Companion
           </p>
           <div className="flex gap-2 justify-center mt-4">
-            <span className="px-3 py-1 text-sm bg-purple-900/50 dark:bg-purple-900/50 light:bg-purple-100 text-purple-300 dark:text-purple-300 light:text-purple-700 rounded-full">Open Source</span>
-            <span className="px-3 py-1 text-sm bg-blue-900/50 dark:bg-blue-900/50 light:bg-blue-100 text-blue-300 dark:text-blue-300 light:text-blue-700 rounded-full">Free Forever</span>
+            <span className="px-3 py-1 text-sm bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300 rounded-full">Open Source</span>
+            <span className="px-3 py-1 text-sm bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 rounded-full">Free Forever</span>
           </div>
         </div>
 
         <div className="space-y-8 mt-12 w-full">
           <div className="transform hover:scale-105 transition-transform duration-300">
-            <div className="flex flex-col gap-4 p-8 rounded-2xl bg-gray-800/50 dark:bg-gray-800/50 light:bg-white shadow-lg border border-gray-700 dark:border-gray-700 light:border-gray-100">
-              <h2 className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 dark:from-purple-400 dark:to-blue-400 light:from-purple-600 light:to-blue-500 bg-clip-text text-transparent">
+            <div className="flex flex-col gap-4 p-8 rounded-2xl bg-white dark:bg-gray-800/50 shadow-lg border border-gray-200 dark:border-gray-700">
+              <h2 className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 dark:from-purple-400 dark:to-blue-400 bg-clip-text text-transparent">
                 🚀 Intercept. Test. Proxy. Repeat.
               </h2>
-              <p className="text-lg text-gray-300 dark:text-gray-300 light:text-gray-600">
+              <p className="text-lg text-gray-600 dark:text-gray-300">
                 Debug your APIs like a pro with our open-source tunneling solution. 
                 No more "works on my machine" drama! Experience seamless API testing 
                 with real-time request interception.
@@ -49,31 +49,31 @@ export default function Home() {
           </div>
 
           <div className="transform hover:scale-105 transition-transform duration-300">
-            <div className="flex flex-col gap-4 p-8 rounded-2xl bg-gray-800/50 dark:bg-gray-800/50 light:bg-white shadow-lg border border-gray-700 dark:border-gray-700 light:border-gray-100">
-              <h2 className="text-3xl font-bold bg-gradient-to-r from-green-400 to-emerald-400 dark:from-green-400 dark:to-emerald-400 light:from-green-500 light:to-emerald-500 bg-clip-text text-transparent">
+            <div className="flex flex-col gap-4 p-8 rounded-2xl bg-white dark:bg-gray-800/50 shadow-lg border border-gray-200 dark:border-gray-700">
+              <h2 className="text-3xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 dark:from-green-400 dark:to-emerald-400 bg-clip-text text-transparent">
                 💰 Pricing (Hold onto Your Wallet!)
               </h2>
               <div className="text-left space-y-4">
                 <div className="flex items-baseline gap-2">
-                  <p className="text-4xl font-bold text-green-400 dark:text-green-400 light:text-green-500">$0.00</p>
-                  <p className="text-xl text-gray-400 dark:text-gray-400 light:text-gray-500">Forever*</p>
+                  <p className="text-4xl font-bold text-green-600 dark:text-green-400">$0.00</p>
+                  <p className="text-xl text-gray-500 dark:text-gray-400">Forever*</p>
                 </div>
-                <p className="text-sm text-gray-400 dark:text-gray-400 light:text-gray-500 italic">* No, this is not a typo. We're serious!</p>
-                <ul className="list-none space-y-3 text-gray-300 dark:text-gray-300 light:text-gray-600">
+                <p className="text-sm text-gray-500 dark:text-gray-400 italic">* No, this is not a typo. We're serious!</p>
+                <ul className="list-none space-y-3 text-gray-600 dark:text-gray-300">
                   <li className="flex items-center gap-2">
-                    <span className="text-green-400 dark:text-green-400 light:text-green-500">✓</span>
+                    <span className="text-green-600 dark:text-green-400">✓</span>
                     <span>Because who doesn't love free stuff?</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="text-green-400 dark:text-green-400 light:text-green-500">✓</span>
+                    <span className="text-green-600 dark:text-green-400">✓</span>
                     <span>No credit card required (we won't even ask!)</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="text-green-400 dark:text-green-400 light:text-green-500">✓</span>
+                    <span className="text-green-600 dark:text-green-400">✓</span>
                     <span>No hidden fees (we promise, pinky swear!)</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="text-green-400 dark:text-green-400 light:text-green-500">✓</span>
+                    <span className="text-green-600 dark:text-green-400">✓</span>
                     <span>No "premium" features held hostage</span>
                   </li>
                 </ul>
@@ -95,7 +95,7 @@ export default function Home() {
             Star on GitHub
           </a>
           <a
-            className="rounded-full border-2 border-solid border-purple-400 dark:border-purple-400 light:border-purple-500 transition-all flex items-center justify-center hover:bg-purple-900/20 dark:hover:bg-purple-900/20 light:hover:bg-purple-50 text-purple-400 dark:text-purple-400 light:text-purple-600 hover:text-purple-300 dark:hover:text-purple-300 light:hover:text-purple-700 text-base sm:text-lg h-14 px-8"
+            className="rounded-full border-2 border-solid border-purple-500 dark:border-purple-400 transition-all flex items-center justify-center hover:bg-purple-50 dark:hover:bg-purple-900/20 text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 text-base sm:text-lg h-14 px-8"
             href="https://github.com/cube-root/proxyhub#readme"
             target="_blank"
             rel="noopener noreferrer"
@@ -105,21 +105,21 @@ export default function Home() {
         </div>
       </main>
 
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center text-sm text-gray-400 dark:text-gray-400 light:text-gray-500">
+      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center text-sm text-gray-500 dark:text-gray-400">
         <p className="flex items-center gap-2">
           Built with <span className="text-red-500 animate-pulse">❤️</span> for developers
         </p>
         <a
-          className="hover:text-purple-400 dark:hover:text-purple-400 light:hover:text-purple-500 transition-colors"
+          className="hover:text-purple-500 dark:hover:text-purple-400 transition-colors"
           href="https://github.com/cube-root/proxyhub"
           target="_blank"
           rel="noopener noreferrer"
         >
           GitHub
         </a>
-        <span className="text-gray-400 dark:text-gray-500 light:text-gray-400">•</span>
+        <span className="text-gray-400 dark:text-gray-500">•</span>
         <a
-          className="hover:text-purple-400 dark:hover:text-purple-400 light:hover:text-purple-500 transition-colors text-sm"
+          className="hover:text-purple-500 dark:hover:text-purple-400 transition-colors text-sm"
           href="https://github.com/abhisawesome"
           target="_blank"
           rel="noopener noreferrer"
