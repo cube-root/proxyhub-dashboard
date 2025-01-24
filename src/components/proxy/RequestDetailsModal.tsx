@@ -167,16 +167,30 @@ export function RequestDetailsModal({
                   </div>
                 </div>
               </div>
-              <div className="mb-4">
-                <div className="text-sm text-gray-500 dark:text-gray-400 mb-1">Full URL</div>
-                <div className="bg-white dark:bg-gray-800 rounded-lg p-2 font-mono text-sm break-all border border-gray-200 dark:border-gray-700">
-                  {request.fullUrl || request.path}
+              <div className="px-6 space-y-4">
+                <div className="space-y-2">
+                  <div className="text-sm font-medium text-gray-500 dark:text-gray-400">Full URL</div>
+                  <div className="group relative bg-gray-50 dark:bg-gray-900 rounded-lg p-3 font-mono text-sm break-all border border-gray-200 dark:border-gray-700 hover:shadow-md transition-all duration-200">
+                    <button
+                      onClick={() => copyToClipboard(request.fullUrl || request.path)}
+                      className="absolute right-2 top-2 opacity-0 group-hover:opacity-100 transition-opacity p-1.5 rounded-md bg-white dark:bg-gray-800 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 border border-gray-200 dark:border-gray-700 shadow-sm"
+                    >
+                      {copied ? "Copied!" : "Copy"}
+                    </button>
+                    <span className="text-gray-800 dark:text-gray-200">{request.fullUrl || request.path}</span>
+                  </div>
                 </div>
-              </div>
-              <div className="mb-4">
-                <div className="text-sm text-gray-500 dark:text-gray-400 mb-1">Path</div>
-                <div className="bg-white dark:bg-gray-800 rounded-lg p-2 font-mono text-sm break-all border border-gray-200 dark:border-gray-700">
-                  {request.path}
+                <div className="space-y-2">
+                  <div className="text-sm font-medium text-gray-500 dark:text-gray-400">Path</div>
+                  <div className="group relative bg-gray-50 dark:bg-gray-900 rounded-lg p-3 font-mono text-sm break-all border border-gray-200 dark:border-gray-700 hover:shadow-md transition-all duration-200">
+                    <button
+                      onClick={() => copyToClipboard(request.path)}
+                      className="absolute right-2 top-2 opacity-0 group-hover:opacity-100 transition-opacity p-1.5 rounded-md bg-white dark:bg-gray-800 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 border border-gray-200 dark:border-gray-700 shadow-sm"
+                    >
+                      {copied ? "Copied!" : "Copy"}
+                    </button>
+                    <span className="text-gray-800 dark:text-gray-200">{request.path}</span>
+                  </div>
                 </div>
               </div>
             </div>
