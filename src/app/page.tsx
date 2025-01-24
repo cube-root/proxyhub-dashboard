@@ -2,32 +2,16 @@
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import Image from "next/image"; // Add this import
-
+import Header from "@/components/Header";
 export default function Home() {
   return (
     <>
-      <GoogleAnalytics gaId={process?.env?.NEXT_PUBLIC_GA_MEASUREMENT_ID || ''} />
+      <GoogleAnalytics
+        gaId={process?.env?.NEXT_PUBLIC_GA_MEASUREMENT_ID || ""}
+      />
       <div className="relative flex min-h-screen flex-col bg-white p-4 dark:bg-gray-900 text-gray-900 dark:text-white sm:p-6 md:p-8">
         {/* Header */}
-        <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between bg-white/80 px-4 py-3 backdrop-blur-sm dark:bg-gray-900/80 sm:px-6 md:px-8">
-          <Image
-            src="/proxyhub_light.png"
-            alt="ProxyHub"
-            width={32}
-            height={32}
-            className="h-6 w-auto dark:block hidden sm:h-8"
-            priority
-          />
-          <Image
-            src="/proxyhub_dark.png"
-            alt="ProxyHub"
-            width={32}
-            height={32}
-            className="h-6 w-auto dark:hidden dark:block sm:h-8"
-            priority
-          />
-          <ThemeToggle />
-        </header>
+        <Header />
 
         {/* Main Content */}
         <main className="mx-auto flex w-full max-w-5xl flex-1 flex-col gap-6 pt-10 pb-16 md:gap-8 md:pt-12">
@@ -107,8 +91,9 @@ export default function Home() {
               </h2>
               <p className="mt-4 text-gray-600 dark:text-gray-300">
                 Debug your APIs like a pro with our open-source tunneling
-                solution. No more &ldquo;works on my machine&rdquo; drama! Experience
-                seamless API testing with real-time request interception.
+                solution. No more &ldquo;works on my machine&rdquo; drama!
+                Experience seamless API testing with real-time request
+                interception.
               </p>
             </div>
 
@@ -139,7 +124,9 @@ export default function Home() {
                     <span className="text-green-600 dark:text-green-400">
                       ✓
                     </span>
-                    <span>No credit card required (we won&apos;t even ask!)</span>
+                    <span>
+                      No credit card required (we won&apos;t even ask!)
+                    </span>
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="text-green-600 dark:text-green-400">
@@ -160,13 +147,13 @@ export default function Home() {
                     🎁 Want to Support Us?
                   </p>
                   <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
-                    While we&apos;re committed to keeping ProxyHub free, we won&apos;t
-                    stop you from buying us a coffee! (We&apos;ve been told it&apos;s
-                    weird to refuse money 😅)
+                    While we&apos;re committed to keeping ProxyHub free, we
+                    won&apos;t stop you from buying us a coffee! (We&apos;ve
+                    been told it&apos;s weird to refuse money 😅)
                   </p>
                   <p className="mt-1 text-sm italic text-gray-500 dark:text-gray-400">
-                    **Plot twist: Cloud providers don&apos;t accept high-fives as
-                    payment (we tried) 🤦‍♂️
+                    **Plot twist: Cloud providers don&apos;t accept high-fives
+                    as payment (we tried) 🤦‍♂️
                   </p>
                   <div className="mt-3 space-y-2">
                     <p className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
