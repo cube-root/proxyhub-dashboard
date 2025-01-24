@@ -1,13 +1,14 @@
 "use client";
 
-import Header from "@/components/Header";
+import dynamic from "next/dynamic";
+import { use, useEffect } from "react";
 import { useFirebase } from "@/hooks/firebase";
-import { use } from "react";
+import Header from "@/components/Header";
 import { LoadingSpinner } from "@/components/proxy/LoadingSpinner";
-import { ErrorDisplay } from "@/components/proxy/ErrorDisplay";
-import { EmptyState } from "@/components/proxy/EmptyState";
-import { RequestTable } from "@/components/proxy/RequestTable";
-import { useEffect } from "react";
+
+const ErrorDisplay = dynamic(() => import("@/components/proxy/ErrorDisplay").then(mod => ({ default: mod.ErrorDisplay })), { ssr: false });
+const EmptyState = dynamic(() => import("@/components/proxy/EmptyState").then(mod => ({ default: mod.EmptyState })), { ssr: false });
+const RequestTable = dynamic(() => import("@/components/proxy/RequestTable").then(mod => ({ default: mod.RequestTable })), { ssr: false });
 
 interface Props {
   params: Promise<{
