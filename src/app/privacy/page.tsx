@@ -60,7 +60,7 @@ export default function Privacy() {
             </h2>
             <p className="text-gray-600 dark:text-gray-300">
               While we strive to protect your privacy and maintain the security
-              of our services, ProxyHub is provided "as is" without
+              of our services, ProxyHub is provided &ldquo;as is&rdquo; without
               any warranties of any kind. We are not liable for any damages,
               losses, or consequences that may arise from the use of our
               services, including but not limited to:

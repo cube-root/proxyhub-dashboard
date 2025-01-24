@@ -1,23 +1,30 @@
 "use client";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import Image from "next/image"; // Add this import
 
 export default function Home() {
   return (
     <>
-      <GoogleAnalytics gaId={process?.env?.NEXT_PUBLIC_GA_MEASUREMENT_ID!} />
+      <GoogleAnalytics gaId={process?.env?.NEXT_PUBLIC_GA_MEASUREMENT_ID || ''} />
       <div className="relative flex min-h-screen flex-col bg-white p-4 dark:bg-gray-900 text-gray-900 dark:text-white sm:p-6 md:p-8">
         {/* Header */}
         <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between bg-white/80 px-4 py-3 backdrop-blur-sm dark:bg-gray-900/80 sm:px-6 md:px-8">
-          <img
+          <Image
             src="/proxyhub_light.png"
             alt="ProxyHub"
+            width={32}
+            height={32}
             className="h-6 w-auto dark:block hidden sm:h-8"
+            priority
           />
-          <img
+          <Image
             src="/proxyhub_dark.png"
             alt="ProxyHub"
+            width={32}
+            height={32}
             className="h-6 w-auto dark:hidden dark:block sm:h-8"
+            priority
           />
           <ThemeToggle />
         </header>
@@ -100,7 +107,7 @@ export default function Home() {
               </h2>
               <p className="mt-4 text-gray-600 dark:text-gray-300">
                 Debug your APIs like a pro with our open-source tunneling
-                solution. No more "works on my machine" drama! Experience
+                solution. No more &ldquo;works on my machine&rdquo; drama! Experience
                 seamless API testing with real-time request interception.
               </p>
             </div>
@@ -119,20 +126,20 @@ export default function Home() {
                   </p>
                 </div>
                 <p className="text-sm italic text-gray-500 dark:text-gray-400">
-                  * No, this is not a typo. We're serious!
+                  * No, this is not a typo. We&apos;re serious!
                 </p>
                 <ul className="space-y-2 text-gray-600 dark:text-gray-300">
                   <li className="flex items-center gap-2">
                     <span className="text-green-600 dark:text-green-400">
                       ✓
                     </span>
-                    <span>Because who doesn't love free stuff?</span>
+                    <span>Because who doesn&apos;t love free stuff?</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="text-green-600 dark:text-green-400">
                       ✓
                     </span>
-                    <span>No credit card required (we won't even ask!)</span>
+                    <span>No credit card required (we won&apos;t even ask!)</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="text-green-600 dark:text-green-400">
@@ -144,7 +151,7 @@ export default function Home() {
                     <span className="text-green-600 dark:text-green-400">
                       ✓
                     </span>
-                    <span>No "premium" features held hostage</span>
+                    <span>No &ldquo;premium&rdquo; features held hostage</span>
                   </li>
                 </ul>
 
@@ -153,18 +160,18 @@ export default function Home() {
                     🎁 Want to Support Us?
                   </p>
                   <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
-                    While we're committed to keeping ProxyHub free, we won't
-                    stop you from buying us a coffee! (We've been told it's
+                    While we&apos;re committed to keeping ProxyHub free, we won&apos;t
+                    stop you from buying us a coffee! (We&apos;ve been told it&apos;s
                     weird to refuse money 😅)
                   </p>
                   <p className="mt-1 text-sm italic text-gray-500 dark:text-gray-400">
-                    **Plot twist: Cloud providers don't accept high-fives as
+                    **Plot twist: Cloud providers don&apos;t accept high-fives as
                     payment (we tried) 🤦‍♂️
                   </p>
                   <div className="mt-3 space-y-2">
                     <p className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
                       <span className="text-yellow-500">⭐</span>
-                      Star us on GitHub (it's free and makes us happy!)
+                      Star us on GitHub (it&apos;s free and makes us happy!)
                     </p>
                     <a
                       href="https://buymeacoffee.com/abhisawzm"
@@ -216,9 +223,11 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img
+              <Image
                 src="https://cdn.buymeacoffee.com/buttons/v2/default-orange.png"
                 alt="Buy Me A Coffee"
+                width={200}
+                height={48}
                 className="h-12 w-[200px] object-cover"
               />
             </a>

@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import ApiTester from "@/components/api-tester/ApiTester";
 import Link from "next/link";
+import Image from "next/image";  // Add this import
 
 export const metadata: Metadata = {
   title: "ProxyHub",
@@ -15,29 +16,21 @@ export default function TestingTool() {
           href="/"
           className="inline-flex items-center gap-2 hover:opacity-80 transition-opacity"
         >
-          {/* <svg 
-            className="w-8 h-8" 
-            viewBox="0 0 24 24" 
-            fill="none" 
-            stroke="currentColor" 
-            strokeWidth="2" 
-            strokeLinecap="round" 
-            strokeLinejoin="round"
-          >
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-            <polyline points="22,6 12,13 2,6" />
-            <line x1="12" y1="13" x2="12" y2="21" />
-            <line x1="8" y1="17" x2="16" y2="17" />
-          </svg> */}
-          <img
+          <Image
             src="/proxyhub_light.png"
             alt="ProxyHub"
+            width={32}
+            height={32}
+            priority
             className="w-auto h-6 sm:h-8 hidden dark:block"
           />
 
-          <img
+          <Image
             src="/proxyhub_dark.png"
             alt="ProxyHub"
+            width={32}
+            height={32}
+            priority
             className="w-auto h-6 sm:h-8 block dark:hidden"
           />
         </Link>
