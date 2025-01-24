@@ -7,7 +7,7 @@ import { LoadingSpinner } from "@/components/proxy/LoadingSpinner";
 import { ErrorDisplay } from "@/components/proxy/ErrorDisplay";
 import { EmptyState } from "@/components/proxy/EmptyState";
 import { RequestTable } from "@/components/proxy/RequestTable";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
 interface Props {
   params: Promise<{
@@ -18,7 +18,7 @@ interface Props {
 function Proxy({ params }: Props) {
   const { requestId } = use(params);
   const { isLoading, error, data } = useFirebase(requestId);
-  const [selectedRequest, setSelectedRequest] = useState<any>(null);
+
   // only console the newley added data
   useEffect(() => {
     if (data) {
@@ -38,12 +38,6 @@ function Proxy({ params }: Props) {
   if (!data || data?.length === 0) {
     return <EmptyState />;
   }
-
-  const handleViewRequest = (request: any) => {
-    setSelectedRequest(request);
-    // TODO: Show request details in a modal
-    console.log("Request details:", request);
-  };
 
   return <RequestTable requests={data} />;
 }

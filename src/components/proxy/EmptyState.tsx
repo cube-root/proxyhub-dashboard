@@ -39,7 +39,7 @@ export function EmptyState() {
               No Requests Yet
             </h3>
             <p className="text-gray-600 dark:text-gray-300 max-w-sm">
-              We're actively listening for incoming requests. They'll appear
+              We&apos;re actively listening for incoming requests. They&apos;ll appear
               here as soon as they arrive.
             </p>
           </div>
@@ -102,23 +102,7 @@ export function EmptyState() {
                       d="M5 13l4 4L19 7"
                     />
                   </svg>
-                  Check your request headers
-                </li>
-                <li className="flex items-center">
-                  <svg
-                    className="h-4 w-4 mr-2"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                  Verify your request method
+                  Check if your request includes required headers
                 </li>
               </ul>
             </div>

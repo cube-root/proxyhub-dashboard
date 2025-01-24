@@ -1,5 +1,4 @@
 "use client";
-import { ThemeToggle } from "@/components/ThemeToggle";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import Image from "next/image"; // Add this import
 import Header from "@/components/Header";

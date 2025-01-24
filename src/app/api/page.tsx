@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import ApiTester from "@/components/api-tester/ApiTester";
-import Link from "next/link";
-import Image from "next/image"; // Add this import
+
 import Header from "@/components/Header";
 export const metadata: Metadata = {
   title: "ProxyHub",
