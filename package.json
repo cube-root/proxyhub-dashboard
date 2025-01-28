@@ -9,11 +9,16 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "build:worker": "opennextjs-cloudflare",
+    "dev:worker": "wrangler dev --port 8771",
+    "preview:worker": "npm run build:worker && npm run dev:worker",
+    "deploy:worker": "npm run build:worker && wrangler deploy"
   },
   "dependencies": {
     "@next/env": "^15.1.6",
     "@next/third-parties": "^15.1.6",
+    "firebase": "^11.2.0",
     "lucide-react": "^0.473.0",
     "next": "15.1.5",
     "react": "^19.0.0",
@@ -21,6 +26,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@opennextjs/cloudflare": "^0.4.0",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
