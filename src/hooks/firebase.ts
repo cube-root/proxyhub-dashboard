@@ -27,7 +27,7 @@ const useFirebase = (requestId: string) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const collectionRef = collection(db, requestId);
+        const collectionRef = collection(db, 'proxy', requestId, 'data');
         const q = query(collectionRef, orderBy("createdAt", "desc"));
         const querySnapshot = await getDocs(q);
         const requests = querySnapshot.docs.map((doc) => {
@@ -51,7 +51,7 @@ const useFirebase = (requestId: string) => {
   }, [requestId]);
 
   useEffect(() => {
-    const collectionRef = collection(db, requestId);
+    const collectionRef = collection(db, 'proxy', requestId, 'data');
     const q = query(
       collectionRef,
       orderBy("createdAt", "desc"),
@@ -61,7 +61,6 @@ const useFirebase = (requestId: string) => {
       next: (snapshot) => {
         const updatedRequests = snapshot.docs.map((doc) => {
           const data = doc.data();
-          console.log("data", data);
           return {
             id: doc.id,
             ...data,
