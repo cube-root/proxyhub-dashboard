@@ -5,7 +5,8 @@ import { use, useEffect } from "react";
 import { useFirebase } from "@/hooks/firebase";
 import Header from "@/components/Header";
 import { LoadingSpinner } from "@/components/proxy/LoadingSpinner";
-
+import { useSearchParams } from 'next/navigation'
+ 
 const ErrorDisplay = dynamic(() => import("@/components/proxy/ErrorDisplay").then(mod => ({ default: mod.ErrorDisplay })), { ssr: false });
 const EmptyState = dynamic(() => import("@/components/proxy/EmptyState").then(mod => ({ default: mod.EmptyState })), { ssr: false });
 const RequestTable = dynamic(() => import("@/components/proxy/RequestTable").then(mod => ({ default: mod.RequestTable })), { ssr: false });
@@ -17,8 +18,16 @@ interface Props {
 }
 
 function Proxy({ params }: Props) {
+  const searchParams = useSearchParams()
+ 
+  const key = searchParams.get('key')
+  
+  if (!key) {
+    return <ErrorDisplay error={new Error("Key not found. Please provide a valid key parameter.")} />;
+  }
+
   const { requestId } = use(params);
-  const { isLoading, error, data } = useFirebase(requestId);
+  const { isLoading, error, data } = useFirebase(requestId, key);
 
   // only console the newley added data
   useEffect(() => {
@@ -39,7 +48,6 @@ function Proxy({ params }: Props) {
   if (!data || data?.length === 0) {
     return <EmptyState />;
   }
-
   return <RequestTable requests={data} />;
 }
 

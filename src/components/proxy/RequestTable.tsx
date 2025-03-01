@@ -4,21 +4,32 @@ import { useState } from "react";
 import { RequestDetailsModal } from "./RequestDetailsModal";
 
 interface Request {
-  id: string;
+  requestId: string;
   method: string;
   path: string;
-  statusCode: number;
-  createdAt: string;
-  updatedAt: string;
   queryParams?: Record<string, unknown>;
   requestHeader?: Record<string, string>;
-  responseHeader?: Record<string, string>;
   body?: any;
-  response?: any;
+  fullUrl: string;
+}
+
+interface Response {
+  responseHeader: Record<string, string>;
+  statusCode: number;
+  response: any;
+}
+
+interface Data {
+  id: string;
+  requestId: string;
+  createdAt: string;
+  updatedAt: string;
+  request: Request;
+  response: Response;
 }
 
 interface RequestTableProps {
-  requests: Request[];
+  requests: Data[];
 }
 
 function calculateLatency(createdAt: string, updatedAt: string): number {
@@ -35,10 +46,10 @@ function formatLatency(latency: number): string {
 }
 
 export function RequestTable({ requests }: RequestTableProps) {
-  const [selectedRequest, setSelectedRequest] = useState<Request | null>(null);
+  const [selectedRequest, setSelectedRequest] = useState<Data | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleRequestClick = (request: Request) => {
+  const handleRequestClick = (request: Data) => {
     setSelectedRequest(request);
     setIsModalOpen(true);
   };
@@ -109,29 +120,29 @@ export function RequestTable({ requests }: RequestTableProps) {
                         <span
                           className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium transition-colors duration-150
                           ${
-                            request.method === "GET"
+                            request.request.method === "GET"
                               ? "bg-blue-50 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400 ring-1 ring-blue-500/30"
-                              : request.method === "POST"
+                              : request.request.method === "POST"
                               ? "bg-green-50 text-green-600 dark:bg-green-900/30 dark:text-green-400 ring-1 ring-green-500/30"
-                              : request.method === "PUT"
+                              : request.request.method === "PUT"
                               ? "bg-yellow-50 text-yellow-600 dark:bg-yellow-900/30 dark:text-yellow-400 ring-1 ring-yellow-500/30"
-                              : request.method === "DELETE"
+                              : request.request.method === "DELETE"
                               ? "bg-red-50 text-red-600 dark:bg-red-900/30 dark:text-red-400 ring-1 ring-red-500/30"
                               : "bg-gray-50 text-gray-600 dark:bg-gray-900/30 dark:text-gray-400 ring-1 ring-gray-500/30"
                           }`}
                         >
-                          {request.method}
+                          {request.request.method}
                         </span>
                       </td>
                       <td className="px-6 py-4 max-w-md transition-colors">
                         <div className="text-sm text-gray-900 dark:text-gray-100 truncate">
-                          {request.path}
+                          {request.request.path}
                         </div>
-                        {request.queryParams &&
-                          typeof request.queryParams === "object" &&
-                          Object.keys(request.queryParams).length > 0 && (
+                        {request.request.queryParams &&
+                          typeof request.request.queryParams === "object" &&
+                          Object.keys(request.request.queryParams).length > 0 && (
                             <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-                              {Object.entries(request.queryParams).map(
+                              {Object.entries(request.request.queryParams).map(
                                 ([key, value]) => (
                                   <span
                                     key={key}
@@ -149,10 +160,10 @@ export function RequestTable({ requests }: RequestTableProps) {
                           <div
                             className={`w-2 h-2 rounded-full mr-2
                             ${
-                              request.statusCode >= 200 &&
-                              request.statusCode < 300
+                              request.response.statusCode >= 200 &&
+                              request.response.statusCode < 300
                                 ? "bg-green-400"
-                                : request.statusCode >= 400
+                                : request.response.statusCode >= 400
                                 ? "bg-red-400"
                                 : "bg-yellow-400"
                             }`}
@@ -160,15 +171,15 @@ export function RequestTable({ requests }: RequestTableProps) {
                           <span
                             className={`inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium
                             ${
-                              request.statusCode >= 200 &&
-                              request.statusCode < 300
+                              request.response.statusCode >= 200 &&
+                              request.response.statusCode < 300
                                 ? "bg-green-50 text-green-700 dark:bg-green-900/30 dark:text-green-400"
-                                : request.statusCode >= 400
+                                : request.response.statusCode >= 400
                                 ? "bg-red-50 text-red-700 dark:bg-red-900/30 dark:text-red-400"
                                 : "bg-yellow-50 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400"
                             }`}
                           >
-                            {request.statusCode}
+                            {request.response.statusCode}
                           </span>
                         </div>
                       </td>
@@ -205,7 +216,20 @@ export function RequestTable({ requests }: RequestTableProps) {
 
       {selectedRequest && (
         <RequestDetailsModal
-          request={selectedRequest}
+          request={{
+            id: selectedRequest.id,
+            method: selectedRequest.request.method,
+            path: selectedRequest.request.path,
+            statusCode: selectedRequest.response.statusCode,
+            createdAt: selectedRequest.createdAt,
+            updatedAt: selectedRequest.updatedAt,
+            queryParams: selectedRequest.request.queryParams,
+            requestHeader: selectedRequest.request.requestHeader,
+            responseHeader: selectedRequest.response.responseHeader,
+            body: selectedRequest.request.body,
+            response: selectedRequest.response.response,
+            fullUrl: selectedRequest.request.fullUrl
+          }}
           isOpen={isModalOpen}
           onClose={() => {
             setIsModalOpen(false);
